@@ -67,10 +67,41 @@ let songIndex = 0;
 myForwardIcon.addEventListener("click", function () {
     // Load the current song
     loadSong(songsData[songIndex]);
-    
+    playAudio();
+
     // Move to the next song, and loop if necessary
     songIndex++;
     if (songIndex >= songsData.length) {
         songIndex = 0; // Loop back to the first song
     }
+});
+
+// Getting and displaying current time and total time
+const myTotalTimee = document.querySelector(".totaltime");
+const myCurrentTimee = document.querySelector(".currenttime");
+
+// Ensure the duration is displayed correctly when metadata is loaded
+myAudioFile.addEventListener("loadedmetadata", function () {
+    let myTotalTime = myAudioFile.duration;
+
+    let totalTimeInMinutes = Math.floor(myTotalTime / 60);
+    let totalTimeInSeconds = Math.floor(myTotalTime % 60);
+    
+    // Format seconds to always show two digits
+    totalTimeInSeconds = totalTimeInSeconds < 10 ? `0${totalTimeInSeconds}` : totalTimeInSeconds;
+
+    myTotalTimee.textContent = `${totalTimeInMinutes}:${totalTimeInSeconds}`;
+});
+
+// Update current time as the audio plays
+myAudioFile.addEventListener("timeupdate", function () {
+    let myCurrentTime = myAudioFile.currentTime;
+
+    let currentTimeInMinutes = Math.floor(myCurrentTime / 60);
+    let currentTimeInSeconds = Math.floor(myCurrentTime % 60);
+    
+    // Format seconds to always show two digits
+    currentTimeInSeconds = currentTimeInSeconds < 10 ? `0${currentTimeInSeconds}` : currentTimeInSeconds;
+
+    myCurrentTimee.textContent = `${currentTimeInMinutes}:${currentTimeInSeconds}`;
 });
