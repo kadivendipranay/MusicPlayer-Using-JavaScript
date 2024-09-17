@@ -3,37 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Music Player</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="container">
+        <!-- Album cover image -->
         <img src="images/image1.jpg" alt="Album cover">
 
+        <!-- Audio file -->
         <audio src="audios/audio1.mp3" id="audio"></audio> <!-- Added id for audio -->
 
-        <h2>White Rabbit</h2>
-        <h3>Steve Harry</h3>
+        <!-- Song and artist names -->
+        <h2 id="song-name">White Rabbit</h2>
+        <h3 id="singer-name">Steve Harry</h3>
 
+        <!-- Progress bar -->
         <div class="progressouter">
             <div class="progressinner" id="progress"></div> <!-- Added id for JS reference -->
         </div>
 
+        <!-- Time container -->
         <div id="timecontainer">
             <div class="currenttime" id="current-time">0:00</div> <!-- Added ids for time display -->
-            <div class="totaltime" id="total-time">3:45</div>
+            <div class="totaltime" id="total-time">0:00</div>
         </div>
 
+        <!-- Control icons -->
         <div class="icons">
-            <i class="fa-solid fa-shuffle"></i>
-            <i class="fa-solid fa-backward"></i>
-            <i class="fa-solid fa-play" id="play"></i> <!-- Play button -->
-            <i class="fa-solid fa-forward" id="forward"></i> <!-- Forward button -->
-            <i class="fa-solid fa-volume-up"></i>
-            <i class="fa-solid fa-list-alt"></i>
-            <i class="fa-solid fa-volume-down"></i>
-            <i class="fa-solid fa-heart"></i>
+            <i class="fa-solid fa-shuffle" id="shuffle"></i> <!-- Added ID -->
+            <i class="fa-solid fa-backward" id="backward"></i> <!-- Added ID -->
+            <i class="fa-solid fa-play" id="play"></i> <!-- Play button with ID -->
+            <i class="fa-solid fa-forward" id="forward"></i> <!-- Forward button with ID -->
+            <i class="fa-solid fa-volume-up" id="volume-up"></i> <!-- Volume up button with ID -->
+            <i class="fa-solid fa-list-alt" id="playlist"></i> <!-- Playlist button with ID -->
+            <i class="fa-solid fa-volume-down" id="volume-down"></i> <!-- Volume down button with ID -->
+            <i class="fa-solid fa-heart" id="heart"></i> <!-- Heart/favorite button with ID -->
         </div>
     </div>
 
